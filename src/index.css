@@ -23,3 +23,15 @@ body {
   background-color: var(--clr-bg0);
   color: var(--clr-fg1);
 }
+
+button,
+input[type='submit'] {
+  border: none;
+  border-radius: 0.5rem;
+}
+
+button:focus, button:hover,
+input[type='submit']:focus, input[type='submit']:hover {
+  outline: none;
+  cursor: pointer;
+}

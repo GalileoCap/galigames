@@ -1,5 +1,4 @@
 #Home-content {
-  /* Place it under the Header */
-  position: absolute;
-  top: 6rem; /* TODO: Change based on header size */ 
+  /* Place it under the Header and above the PartyFooter */
+  padding: 6rem 0 6rem 0;
 }

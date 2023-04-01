@@ -1,0 +1,35 @@
+#PartyFooter {
+  overflow: hidden;
+  position: fixed; /* Sticky/fixed header */
+  bottom: 0.5rem; /* At the bottom */
+  z-index: 99;
+  width: 100%;
+}
+
+#PartyFooter-Peers {
+  /* Center it */
+  width: 80%;
+  margin-inline: auto;
+
+  line-height: 3rem;
+  padding: 1rem 1rem;
+  background-color: var(--clr-bg1);
+  border: solid var(--clr-bg2);
+}
+
+#PartyFooter-Button {
+  float: right;
+	margin-right: 0.5rem;
+  width: fit-content;
+
+  /* TODO: Align icon */
+	border-radius: 1rem;
+  padding: 0 1rem;
+  background-color: var(--clr-yellow0);
+	color: var(--clr-bg0); /* TODO: Nicer color */
+}
+
+#PartyFooter-Button:hover, #PartyFooter-Button:focus {
+  background-color: var(--clr-yellow1);
+	color: var(--clr-bg1); /* TODO: Nicer color */
+}

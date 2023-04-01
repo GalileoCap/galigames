@@ -1,4 +1,4 @@
-import { Header } from '../components';
+import { Header, PartyFooter } from '../components';
 import './Home.css';
 
 export function Home({ }) {
@@ -8,6 +8,7 @@ export function Home({ }) {
       <div id='Home-content'>
         Home
       </div>
+      <PartyFooter />
     </div>
   );
 }
