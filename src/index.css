@@ -14,3 +14,9 @@ svg {
   display: block;
   max-width: 100%;
 }
+
+body {
+  background-color: var(--clr-bg0);
+  color: var(--clr-fg1);
+  /*font-size: 1.5em; TODO: Fix not everything scaling correctly*/
+}

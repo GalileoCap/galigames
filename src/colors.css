@@ -1,0 +1,236 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  font: inherit;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+body {
+  /* Colors */
+    /* Dark (Gruvbox https://github.com/morhetz/gruvbox) */
+
+    --clr-gray0-dark-hsl: 35, 17%, 59%;
+    --clr-gray1-dark-hsl: 30, 12%, 51%;
+    --clr-red0-dark-hsl: 2, 75%, 46%;
+    --clr-red1-dark-hsl: 6, 96%, 59%;
+    --clr-green0-dark-hsl: 60, 71%, 35%;
+    --clr-green1-dark-hsl: 61, 66%, 44%;
+    --clr-yellow0-dark-hsl: 40, 73%, 49%;
+    --clr-yellow1-dark-hsl: 42, 95%, 58%;
+    --clr-blue0-dark-hsl: 183, 33%, 40%;
+    --clr-blue1-dark-hsl: 157, 16%, 58%;
+    --clr-purple0-dark-hsl: 333, 34%, 54%;
+    --clr-purple1-dark-hsl: 344, 47%, 68%;
+    --clr-aqua0-dark-hsl: 122, 21%, 51%;
+    --clr-aqua1-dark-hsl: 104, 35%, 62%;
+    --clr-orange0-dark-hsl: 24, 88%, 45%;
+    --clr-orange1-dark-hsl: 27, 99%, 55%;
+    --clr-bg0-dark-hsl: 0, 0%, 16%;
+    --clr-bg1-dark-hsl: 20, 5%, 22%;
+    --clr-bg2-dark-hsl: 22, 7%, 29%;
+    --clr-bg3-dark-hsl: 27, 10%, 36%;
+    --clr-bg4-dark-hsl: 28, 11%, 44%;
+    --clr-fg0-dark-hsl: 48, 87%, 88%;
+    --clr-fg1-dark-hsl: 43, 59%, 81%;
+    --clr-fg2-dark-hsl: 40, 38%, 73%;
+    --clr-fg3-dark-hsl: 39, 24%, 66%;
+    --clr-fg4-dark-hsl: 35, 17%, 59%;
+
+  /* Light (Gruvbox https://github.com/morhetz/gruvbox) */
+
+    --clr-gray0-light-hsl: 28, 11%, 44%;
+    --clr-gray1-light-hsl: 30, 12%, 51%;
+    --clr-red0-light-hsl: 2, 75%, 46%;
+    --clr-red1-light-hsl: 358, 100%, 31%;
+    --clr-green0-light-hsl: 60, 71%, 35%;
+    --clr-green1-light-hsl: 57, 79%, 26%;
+    --clr-yellow0-light-hsl: 40, 73%, 49%;
+    --clr-yellow1-light-hsl: 37, 80%, 39%;
+    --clr-blue0-light-hsl: 183, 33%, 40%;
+    --clr-blue1-light-hsl: 190, 89%, 25%;
+    --clr-purple0-light-hsl: 333, 34%, 54%;
+    --clr-purple1-light-hsl: 323, 39%, 40%;
+    --clr-aqua0-light-hsl: 122, 21%, 51%;
+    --clr-aqua1-light-hsl: 143, 30%, 37%;
+    --clr-orange0-light-hsl: 24, 88%, 45%;
+    --clr-orange1-light-hsl: 19, 97%, 35%;
+    --clr-bg0-light-hsl: 48, 87%, 88%;
+    --clr-bg1-light-hsl: 43, 59%, 81%;
+    --clr-bg2-light-hsl: 40, 38%, 73%;
+    --clr-bg3-light-hsl: 39, 24%, 66%;
+    --clr-bg4-light-hsl: 35, 17%, 59%;
+    --clr-fg0-light-hsl: 0, 0%, 16%;
+    --clr-fg1-light-hsl: 20, 5%, 22%;
+    --clr-fg2-light-hsl: 22, 7%, 29%;
+    --clr-fg3-light-hsl: 27, 10%, 36%;
+    --clr-fg4-light-hsl: 28, 11%, 44%;
+
+  /* Custom (Defaults to dark) */
+
+    --clr-gray0-custom-hsl: var(--clr-gray0-dark-hsl);
+    --clr-gray1-custom-hsl: var(--clr-gray1-dark-hsl);
+    --clr-red0-custom-hsl: var(--clr-red0-dark-hsl);
+    --clr-red1-custom-hsl: var(--clr-red1-dark-hsl);
+    --clr-green0-custom-hsl: var(--clr-green0-dark-hsl);
+    --clr-green1-custom-hsl: var(--clr-green1-dark-hsl);
+    --clr-yellow0-custom-hsl: var(--clr-yellow0-dark-hsl);
+    --clr-yellow1-custom-hsl: var(--clr-yellow1-dark-hsl);
+    --clr-blue0-custom-hsl: var(--clr-blue0-dark-hsl);
+    --clr-blue1-custom-hsl: var(--clr-blue1-dark-hsl);
+    --clr-purple0-custom-hsl: var(--clr-purple0-dark-hsl);
+    --clr-purple1-custom-hsl: var(--clr-purple1-dark-hsl);
+    --clr-aqua0-custom-hsl: var(--clr-aqua0-dark-hsl);
+    --clr-aqua1-custom-hsl: var(--clr-aqua1-dark-hsl);
+    --clr-orange0-custom-hsl: var(--clr-orange0-dark-hsl);
+    --clr-orange1-custom-hsl: var(--clr-orange1-dark-hsl);
+    --clr-bg0-custom-hsl: var(--clr-bg0-dark-hsl);
+    --clr-bg1-custom-hsl: var(--clr-bg1-dark-hsl);
+    --clr-bg2-custom-hsl: var(--clr-bg2-dark-hsl);
+    --clr-bg3-custom-hsl: var(--clr-bg3-dark-hsl);
+    --clr-bg4-custom-hsl: var(--clr-bg4-dark-hsl);
+    --clr-fg0-custom-hsl: var(--clr-fg0-dark-hsl);
+    --clr-fg1-custom-hsl: var(--clr-fg1-dark-hsl);
+    --clr-fg2-custom-hsl: var(--clr-fg2-dark-hsl);
+    --clr-fg3-custom-hsl: var(--clr-fg3-dark-hsl);
+    --clr-fg4-custom-hsl: var(--clr-fg4-dark-hsl);
+
+  --clr-gray0: hsl(var(--clr-gray0-hsl));
+  --clr-gray1: hsl(var(--clr-gray1-hsl));
+  --clr-red0: hsl(var(--clr-red0-hsl));
+  --clr-red1: hsl(var(--clr-red1-hsl));
+  --clr-green0: hsl(var(--clr-green0-hsl));
+  --clr-green1: hsl(var(--clr-green1-hsl));
+  --clr-yellow0: hsl(var(--clr-yellow0-hsl));
+  --clr-yellow1: hsl(var(--clr-yellow1-hsl));
+  --clr-blue0: hsl(var(--clr-blue0-hsl));
+  --clr-blue1: hsl(var(--clr-blue1-hsl));
+  --clr-purple0: hsl(var(--clr-purple0-hsl));
+  --clr-purple1: hsl(var(--clr-purple1-hsl));
+  --clr-aqua0: hsl(var(--clr-aqua0-hsl));
+  --clr-aqua1: hsl(var(--clr-aqua1-hsl));
+  --clr-orange0: hsl(var(--clr-orange0-hsl));
+  --clr-orange1: hsl(var(--clr-orange1-hsl));
+  --clr-bg0: hsl(var(--clr-bg0-hsl));
+  --clr-bg1: hsl(var(--clr-bg1-hsl));
+  --clr-bg2: hsl(var(--clr-bg2-hsl));
+  --clr-bg3: hsl(var(--clr-bg3-hsl));
+  --clr-bg4: hsl(var(--clr-bg4-hsl));
+  --clr-fg0: hsl(var(--clr-fg0-hsl));
+  --clr-fg1: hsl(var(--clr-fg1-hsl));
+  --clr-fg2: hsl(var(--clr-fg2-hsl));
+  --clr-fg3: hsl(var(--clr-fg3-hsl));
+  --clr-fg4: hsl(var(--clr-fg4-hsl));
+
+  background-color: var(--clr-bg0);
+  color: var(--clr-fg1);
+  /*font-size: 1.5em; TODO: Fix not everything scaling correctly*/
+}
+
+body[data-theme='dark'] {
+  --clr-gray0-hsl: var(--clr-gray0-dark-hsl);
+  --clr-gray1-hsl: var(--clr-gray1-dark-hsl);
+  --clr-red0-hsl: var(--clr-red0-dark-hsl);
+  --clr-red1-hsl: var(--clr-red1-dark-hsl);
+  --clr-green0-hsl: var(--clr-green0-dark-hsl);
+  --clr-green1-hsl: var(--clr-green1-dark-hsl);
+  --clr-yellow0-hsl: var(--clr-yellow0-dark-hsl);
+  --clr-yellow1-hsl: var(--clr-yellow1-dark-hsl);
+  --clr-blue0-hsl: var(--clr-blue0-dark-hsl);
+  --clr-blue1-hsl: var(--clr-blue1-dark-hsl);
+  --clr-purple0-hsl: var(--clr-purple0-dark-hsl);
+  --clr-purple1-hsl: var(--clr-purple1-dark-hsl);
+  --clr-aqua0-hsl: var(--clr-aqua0-dark-hsl);
+  --clr-aqua1-hsl: var(--clr-aqua1-dark-hsl);
+  --clr-orange0-hsl: var(--clr-orange0-dark-hsl);
+  --clr-orange1-hsl: var(--clr-orange1-dark-hsl);
+  --clr-bg0-hsl: var(--clr-bg0-dark-hsl);
+  --clr-bg1-hsl: var(--clr-bg1-dark-hsl);
+  --clr-bg2-hsl: var(--clr-bg2-dark-hsl);
+  --clr-bg3-hsl: var(--clr-bg3-dark-hsl);
+  --clr-bg4-hsl: var(--clr-bg4-dark-hsl);
+  --clr-fg0-hsl: var(--clr-fg0-dark-hsl);
+  --clr-fg1-hsl: var(--clr-fg1-dark-hsl);
+  --clr-fg2-hsl: var(--clr-fg2-dark-hsl);
+  --clr-fg3-hsl: var(--clr-fg3-dark-hsl);
+  --clr-fg4-hsl: var(--clr-fg4-dark-hsl);
+
+  --clr-primary: var(--clr-blue0);
+  --clr-primary-highlight: var(--clr-blue1);
+
+  --clr-secondary: var(--clr-bg3);
+  --clr-secondary-highlight: var(--clr-bg4);
+}
+
+body[data-theme='light'] {
+  --clr-gray0-hsl: var(--clr-gray0-light-hsl);
+  --clr-gray1-hsl: var(--clr-gray1-light-hsl);
+  --clr-red0-hsl: var(--clr-red0-light-hsl);
+  --clr-red1-hsl: var(--clr-red1-light-hsl);
+  --clr-green0-hsl: var(--clr-green0-light-hsl);
+  --clr-green1-hsl: var(--clr-green1-light-hsl);
+  --clr-yellow0-hsl: var(--clr-yellow0-light-hsl);
+  --clr-yellow1-hsl: var(--clr-yellow1-light-hsl);
+  --clr-blue0-hsl: var(--clr-blue0-light-hsl);
+  --clr-blue1-hsl: var(--clr-blue1-light-hsl);
+  --clr-purple0-hsl: var(--clr-purple0-light-hsl);
+  --clr-purple1-hsl: var(--clr-purple1-light-hsl);
+  --clr-aqua0-hsl: var(--clr-aqua0-light-hsl);
+  --clr-aqua1-hsl: var(--clr-aqua1-light-hsl);
+  --clr-orange0-hsl: var(--clr-orange0-light-hsl);
+  --clr-orange1-hsl: var(--clr-orange1-light-hsl);
+  --clr-bg0-hsl: var(--clr-bg0-light-hsl);
+  --clr-bg1-hsl: var(--clr-bg1-light-hsl);
+  --clr-bg2-hsl: var(--clr-bg2-light-hsl);
+  --clr-bg3-hsl: var(--clr-bg3-light-hsl);
+  --clr-bg4-hsl: var(--clr-bg4-light-hsl);
+  --clr-fg0-hsl: var(--clr-fg0-light-hsl);
+  --clr-fg1-hsl: var(--clr-fg1-light-hsl);
+  --clr-fg2-hsl: var(--clr-fg2-light-hsl);
+  --clr-fg3-hsl: var(--clr-fg3-light-hsl);
+  --clr-fg4-hsl: var(--clr-fg4-light-hsl);
+
+  --clr-primary: var(--clr-aqua0);
+  --clr-primary-highlight: var(--clr-aqua1);
+
+  --clr-secondary: var(--clr-bg3);
+  --clr-secondary-highlight: var(--clr-bg4);
+}
+
+body[data-theme='custom'] {
+  --clr-gray0-hsl: var(--clr-gray0-custom-hsl);
+  --clr-gray1-hsl: var(--clr-gray1-custom-hsl);
+  --clr-red0-hsl: var(--clr-red0-custom-hsl);
+  --clr-red1-hsl: var(--clr-red1-custom-hsl);
+  --clr-green0-hsl: var(--clr-green0-custom-hsl);
+  --clr-green1-hsl: var(--clr-green1-custom-hsl);
+  --clr-yellow0-hsl: var(--clr-yellow0-custom-hsl);
+  --clr-yellow1-hsl: var(--clr-yellow1-custom-hsl);
+  --clr-blue0-hsl: var(--clr-blue0-custom-hsl);
+  --clr-blue1-hsl: var(--clr-blue1-custom-hsl);
+  --clr-purple0-hsl: var(--clr-purple0-custom-hsl);
+  --clr-purple1-hsl: var(--clr-purple1-custom-hsl);
+  --clr-aqua0-hsl: var(--clr-aqua0-custom-hsl);
+  --clr-aqua1-hsl: var(--clr-aqua1-custom-hsl);
+  --clr-orange0-hsl: var(--clr-orange0-custom-hsl);
+  --clr-orange1-hsl: var(--clr-orange1-custom-hsl);
+  --clr-bg0-hsl: var(--clr-bg0-custom-hsl);
+  --clr-bg1-hsl: var(--clr-bg1-custom-hsl);
+  --clr-bg2-hsl: var(--clr-bg2-custom-hsl);
+  --clr-bg3-hsl: var(--clr-bg3-custom-hsl);
+  --clr-bg4-hsl: var(--clr-bg4-custom-hsl);
+  --clr-fg0-hsl: var(--clr-fg0-custom-hsl);
+  --clr-fg1-hsl: var(--clr-fg1-custom-hsl);
+  --clr-fg2-hsl: var(--clr-fg2-custom-hsl);
+  --clr-fg3-hsl: var(--clr-fg3-custom-hsl);
+  --clr-fg4-hsl: var(--clr-fg4-custom-hsl);
+}
