@@ -1,0 +1,63 @@
+#Header {
+  overflow: hidden;
+  position: fixed; /* Sticky/fixed header */
+  top: 0; /* At the top */
+  z-index: 99;
+  width: 100%;
+
+  line-height: 4rem;
+  padding: 1rem 1rem;
+  background-color: var(--clr-bg0);
+  border-bottom: solid var(--clr-bg1);
+}
+
+#Header #Logo {
+  float: left;
+  color: var(--clr-fg0);
+
+  font-size: 2rem;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 0.5rem;
+  padding: 0rem 0.3rem;
+}
+
+#Header #Logo:hover, #Header #Logo:focus {
+  outline: none;
+  background-color: var(--clr-bg1);
+}
+
+#Header-Center {
+  float: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#Header-Center .GameTitle {
+  color: var(--clr-fg1);
+
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+/* Display config on the right */
+#Header-Right {
+  float: right;
+}
+
+#Header-Right .Header-Icon {
+  display: inline-block;
+  /* TODO: Center vertically */
+  /* TODO: Separate */
+
+  color: var(--clr-fg2);
+  font-size: 1.8rem;
+}
+
+#Header-Right .Header-Icon:hover, #Header-Right .Header-Icon:focus {
+  cursor: pointer;
+  outline: none;
+  color: var(--clr-fg0);
+}

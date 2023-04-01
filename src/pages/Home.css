@@ -1,0 +1,5 @@
+#Home-content {
+  /* Place it under the Header */
+  position: absolute;
+  top: 6rem; /* TODO: Change based on header size */ 
+}
