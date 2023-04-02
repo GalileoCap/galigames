@@ -1,35 +1,63 @@
-#PartyFooter {
-  overflow: hidden;
+#PartyFooter-Wrapper {
   position: fixed; /* Sticky/fixed header */
   bottom: 0.5rem; /* At the bottom */
   z-index: 99;
   width: 100%;
 }
 
-#PartyFooter-Peers {
+#PartyFooter {
+  overflow: hidden;
+
   /* Center it */
   width: 80%;
   margin-inline: auto;
 
-  line-height: 3rem;
-  padding: 1rem 1rem;
+  padding: 1rem 1rem 0;
   background-color: var(--clr-bg1);
   border: solid var(--clr-bg2);
 }
 
-#PartyFooter-Button {
-  float: right;
-	margin-right: 0.5rem;
-  width: fit-content;
+#PartyFooter-List {
+  float: left;
 
-  /* TODO: Align icon */
-	border-radius: 1rem;
-  padding: 0 1rem;
-  background-color: var(--clr-yellow0);
-	color: var(--clr-bg0); /* TODO: Nicer color */
+  display: grid;
+  grid-auto-flow: column;
+  gap: 0.5rem;
+  overflow: scroll;
+  max-width: 90%; /* TODO: Change to let the actions fit */
 }
 
-#PartyFooter-Button:hover, #PartyFooter-Button:focus {
-  background-color: var(--clr-yellow1);
-	color: var(--clr-bg1); /* TODO: Nicer color */
+.PartyFooter-Member p {
+  text-align: center;
+  font-weight: bold; /* TODO: Change font */
+  /* TODO: Handle long names */
+}
+
+.PartyFooter-Member img {
+  max-width: 100px;
+  max-height: 100px;
+}
+
+#PartyFooter-Actions {
+  float: right;
+  max-width: 10%;
+
+  display: grid;
+  gap: 0.5rem;
+}
+
+#PartyFooter-Button {
+  float: right;
+  margin-right: 0.5rem;
+  width: fit-content;
+
+	border-radius: 1rem;
+  padding: 0.5rem;
+}
+
+#PartyFooter-Button > svg {
+  float: left;
+  margin-right: 0.2rem;
+  -ms-transform: translateY(-5%);
+  transform: translateY(-5%);
 }

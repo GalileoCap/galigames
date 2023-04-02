@@ -24,6 +24,14 @@ body {
   color: var(--clr-fg1);
 }
 
+*.centerVertically {
+  position: absolute;
+  top: 50%;
+  margin: 0;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
 button,
 input[type='submit'] {
   border: none;
@@ -34,4 +42,14 @@ button:focus, button:hover,
 input[type='submit']:focus, input[type='submit']:hover {
   outline: none;
   cursor: pointer;
+}
+
+.primary {
+  background-color: var(--clr-yellow0);
+	color: var(--clr-bg0); /* TODO: Nicer color */
+}
+
+.primary:hover, .primary:focus {
+  background-color: var(--clr-yellow1);
+	color: var(--clr-bg4); /* TODO: Nicer color */
 }
