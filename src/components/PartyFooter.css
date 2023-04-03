@@ -27,6 +27,10 @@
   max-width: 90%; /* TODO: Change to let the actions fit */
 }
 
+#PartyFooter-List:focus {
+  outline: solid 2px var(--clr-gray0);
+}
+
 .PartyFooter-Member p {
   text-align: center;
   font-weight: bold; /* TODO: Change font */
@@ -60,4 +64,14 @@
   margin-right: 0.2rem;
   -ms-transform: translateY(-5%);
   transform: translateY(-5%);
+}
+
+#PartyModal {
+  text-align: center;
+}
+
+#PartyModal h3 {
+  font-weight: bold;
+  font-size: 2rem;
+  margin-bottom: 1rem;
 }
