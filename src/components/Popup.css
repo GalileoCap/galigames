@@ -1,0 +1,88 @@
+.Popup {
+  position: relative;
+  cursor: pointer;
+}
+
+.Popup .Popup-text {
+  visibility: hidden;
+  position: absolute;
+  z-index: 1;
+
+  width: 10rem;
+  padding: 0.4rem 0;
+  background-color: var(--clr-bg2);
+  color: var(--clr-fg0);
+}
+
+.Popup .Popup-text[data-show='true'] {
+  visibility: visible;
+  -webkit-animation: fadeIn 0.5s;
+  animation: fadeIn 0.5s
+}
+
+.Popup .Popup-text.up {
+  bottom: 125%;
+  left: 50%;
+  margin-left: -5rem;
+}
+
+.Popup .Popup-text.down {
+  top: 125%;
+  left: 50%;
+  margin-left: -5rem;
+}
+
+.Popup .Popup-text.left {
+  top: -15%; /* TODO */
+  right: 150%;
+}
+
+.Popup .Popup-text.right {
+  top: -15%; /* TODO */
+  left: 150%;
+}
+
+/* Popup arrow */
+.Popup .Popup-text::after {
+  content: "";
+  position: absolute;
+  border-width: 5px;
+  border-style: solid;
+}
+
+.Popup .Popup-text.up::after {
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-color: var(--clr-bg2) transparent transparent transparent;
+}
+
+.Popup .Popup-text.down::after {
+  bottom: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-color: transparent transparent var(--clr-bg2) transparent;
+}
+
+.Popup .Popup-text.left::after {
+  bottom: 50%;
+  left: 100%;
+  border-color: transparent transparent transparent var(--clr-bg2);
+}
+
+.Popup .Popup-text.right::after {
+  bottom: 50%;
+  right: 100%;
+  border-color: transparent var(--clr-bg2) transparent transparent;
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}
