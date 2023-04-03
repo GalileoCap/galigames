@@ -1,0 +1,43 @@
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 100; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  position: relative;
+  background-color: var(--clr-bg1);
+  margin: 10% auto;
+  padding: 2rem 2rem 0.7rem 2rem;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Icon */
+.modal-close-icon {
+  position: absolute;
+  top: 0rem;
+  right: 1rem;
+
+  color: var(--clr-fg3);
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.modal-close-icon:hover, .modal-close-icon:focus {
+  color: var(--clr-fg2);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-close-button {
+  display: table;
+  margin-top: 1rem;
+  margin-inline: auto;
+}

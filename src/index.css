@@ -53,3 +53,13 @@ input[type='submit']:focus, input[type='submit']:hover {
   background-color: var(--clr-yellow1);
 	color: var(--clr-bg4); /* TODO: Nicer color */
 }
+
+.secondary {
+  background-color: var(--clr-fg4);
+	color: var(--clr-bg1); /* TODO: Nicer color */
+}
+
+.secondary:hover, .secondary:focus {
+  background-color: var(--clr-fg3);
+	color: var(--clr-bg0); /* TODO: Nicer color */
+}
