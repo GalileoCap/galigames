@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Groups as GroupsIcon } from '@mui/icons-material';
-import { Modal } from '../components';
+import { Modal, Popup } from '../components';
 import { useDimensions } from '../utils';
 import './PartyFooter.css';
 
@@ -63,15 +63,39 @@ function PartyButton({ openModal }) {
 }
 
 function PartyModal({ open, setOpen }) {
+  const onCopyLink = () => navigator.clipboard.writeText('link');
+  const onCopyId = () => navigator.clipboard.writeText('id');
+  const onJoin = () => {};
+  const onLeave = () => {};
+
   return (
     <Modal open={open} setOpen={setOpen} showClose={true}>
       <div id='PartyModal'>
         <h3>Manage Party</h3>
-        <p>Share link</p>
-        <p>Party ID</p>
-        <p>Join</p>
-        <p>List of members</p>
-        <p>Leave party</p>
+          <div className='PartyModal-action'>
+            <h4>Share link</h4>
+            <Popup time={500} text={'Copied to clipboard'}>
+              <span id='shareLink' onClick={onCopyLink}>https://games.galileocap.me/join?id=asdasdads</span>
+            </Popup>
+          </div>
+          <div className='PartyModal-action'>
+            <h4>Your ID</h4>
+            <Popup time={500} text={'Copied to clipboard'}>
+              <span id='peerId' onClick={onCopyId}>asdasdasdasd</span>
+            </Popup>
+          </div>
+          <div className='PartyModal-action'>
+            { /* TODO: Hide if no the leader */ }
+            <input id='joinInput' type='text' /><button className='primary' onClick={onJoin}>Join party</button>
+          </div>
+          <div className='PartyModal-action'>
+            <Popup time={1000} text={'Click again to confirm'}>
+              <button className='danger' onClick={onLeave}>Leave party</button>
+            </Popup>
+          </div>
+          <div className='PartyModal-action'>
+            <h4>Members:</h4>
+          </div>
       </div>
     </Modal>
   );
