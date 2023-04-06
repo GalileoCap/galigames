@@ -5,4 +5,5 @@ export * from './Modal';
 export * from './Popup';
 export * from './SearchBar';
 export * from './GameList';
+export * from './Config';
 export * from './utils';

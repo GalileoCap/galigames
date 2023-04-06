@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Groups as GroupsIcon } from '@mui/icons-material';
 import { Modal, Popup } from '../components';
 import { useDimensions } from '../utils';
-import { partyStore } from '../partyStore';
+import { partyStore } from '../stores';
 import { MY_PEER, ALL_PEERS } from '@galileocap/peer-mesh';
 import './PartyFooter.css';
 

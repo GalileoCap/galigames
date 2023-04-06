@@ -1,7 +1,7 @@
 import { useOutletContext } from 'react-router-dom';
 import { ALL_PEERS } from '@galileocap/peer-mesh';
 import { Header, PartyFooter } from '../components';
-import { partyStore } from '../partyStore';
+import { partyStore } from '../stores';
 import './GameHome.css';
 
 function RulesNAbout() {
