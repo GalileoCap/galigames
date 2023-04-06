@@ -1,4 +1,13 @@
 #Home-content {
   /* Place it under the Header and above the PartyFooter */
   padding: 6rem 0 6rem 0;
+  text-align: center;
+}
+
+#Home-content > .SearchBar {
+  margin-top: 1rem;
+}
+
+#Home-content > .GameList {
+  margin-top: 1rem;
 }

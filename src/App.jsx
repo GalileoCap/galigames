@@ -4,7 +4,7 @@ import {
 } from 'react-router-dom'; 
 
 import {
-  Home, Browse,
+  Home,
   GameHome, GamePlay,
   JoinParty, NoPage,
 } from './pages';
@@ -22,7 +22,6 @@ export default function App() {
         <Routes>
           <Route path='/'>
             <Route index element={<Home />} />
-            <Route path='browse' element={<Browse />} />
           </Route>
 
           <Route path='game/:game' element={<GameWrapper />}>

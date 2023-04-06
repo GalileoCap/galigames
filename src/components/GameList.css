@@ -1,0 +1,49 @@
+.GameList {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.GameCard {
+  width: 160px;
+
+  padding: 0.3rem 0;
+  text-align: center;
+
+  background-color: var(--clr-bg1);
+  box-shadow: 0 4px 8px 0 hsla(var(--clr-bg1-hsl), 0.4);
+  border-radius: 15px;
+}
+
+.GameCard:hover, .GameCard:focus {
+  cursor: pointer;
+  box-shadow: 0 8px 16px 0 hsla(var(--clr-bg2-hsl), 0.4); 
+}
+
+.GameCard .Title {
+  font-weight: bold;
+  margin-bottom: 0.1rem;
+}
+
+.GameCard img {
+  /* 16:9 ratio */
+  max-width: 160px;
+  max-height: 90px;
+
+  margin-inline: auto;
+  margin-bottom: 0.2rem;
+}
+
+.GameCard .Actions {
+  margin-top: 0.1rem;
+}
+
+.GameCard .Actions *:nth-child(1) {
+  float: left;
+  margin-left: 1rem;
+}
+
+.GameCard .Actions *:nth-child(2) {
+  float: right;
+  margin-right: 1rem;
+}

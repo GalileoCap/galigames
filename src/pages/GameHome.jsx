@@ -1,9 +1,12 @@
+import { useOutletContext } from 'react-router-dom';
 //import './GameHome.css';
 
-export function GameHome({ }) {
+export function GameHome() {
+	const context = useOutletContext();
+
   return (
     <div id='GameHome'>
-      GameHome
+      GameHome: {context.title}
     </div>
   );
 }

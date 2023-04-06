@@ -1,5 +1,4 @@
 export * from './Home';
-export * from './Browse';
 export * from './GameHome';
 export * from './GamePlay';
 export * from './JoinParty';
