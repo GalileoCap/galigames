@@ -5,8 +5,8 @@ import { NoGame } from '../pages';
 
 export function GameWrapper() {
   const { game } = useParams();
-  const context = getGameContext(game);
+  const gameContext = getGameContext(game);
 
-  if (!context) return <NoGame />;
-  else return <Outlet context={context} />;
+  if (!gameContext) return <NoGame />;
+  else return <Outlet context={{game: gameContext}} />;
 }
