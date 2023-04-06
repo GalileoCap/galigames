@@ -1,5 +1,5 @@
 import {
-  HashRouter as Router, //TODO: Replace with BrowserRouter when switching to games.galileocap.me
+  BrowserRouter as Router,
   Routes, Route, 
 } from 'react-router-dom'; 
 
