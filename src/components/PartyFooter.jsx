@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { Groups as GroupsIcon } from '@mui/icons-material';
 import { Modal, Popup } from '../components';
 import { useDimensions } from '../utils';
+import { partyStore } from '../partyStore';
+import { MY_PEER, ALL_PEERS } from '@galileocap/peer-mesh';
 import './PartyFooter.css';
 
 function PartyMember() {
@@ -63,9 +65,17 @@ function PartyButton({ openModal }) {
 }
 
 function PartyModal({ open, setOpen }) {
-  const onCopyLink = () => navigator.clipboard.writeText('link');
-  const onCopyId = () => navigator.clipboard.writeText('id');
-  const onJoin = () => {};
+  const allPeers = partyStore.usePeer(ALL_PEERS);
+
+  const myId = partyStore.usePeer(MY_PEER)._id;
+  const link = 'https://games.galileocap.me/join?id=' + myId;
+  const onCopyLink = () => navigator.clipboard.writeText(link);
+  const onCopyId = () => navigator.clipboard.writeText(myId);
+
+  const [peerId, setPeerId] = useState('');
+  const onChangePeerId = (event) => setPeerId(event.target.value);
+  const onJoin = () => partyStore.connectTo(peerId);
+
   const onLeave = () => {};
 
   return (
@@ -73,20 +83,20 @@ function PartyModal({ open, setOpen }) {
       <div id='PartyModal'>
         <h3>Manage Party</h3>
           <div className='PartyModal-action'>
-            <h4>Share link</h4>
+            <h4>Your ID</h4>
             <Popup time={500} text={'Copied to clipboard'}>
-              <span id='shareLink' onClick={onCopyLink}>https://games.galileocap.me/join?id=asdasdads</span>
+              <span id='peerId' onClick={onCopyId}>{myId}</span>
             </Popup>
           </div>
           <div className='PartyModal-action'>
-            <h4>Your ID</h4>
+            <h4>Share link</h4>
             <Popup time={500} text={'Copied to clipboard'}>
-              <span id='peerId' onClick={onCopyId}>asdasdasdasd</span>
+              <span id='shareLink' onClick={onCopyLink}>{link}</span>
             </Popup>
           </div>
           <div className='PartyModal-action'>
             { /* TODO: Hide if no the leader */ }
-            <input id='joinInput' type='text' /><button className='primary' onClick={onJoin}>Join party</button>
+            <input id='joinInput' type='text' value={peerId} onChange={onChangePeerId} /><button className='primary' onClick={onJoin}>Join party</button>
           </div>
           <div className='PartyModal-action'>
             <Popup time={1000} text={'Click again to confirm'}>
@@ -95,6 +105,7 @@ function PartyModal({ open, setOpen }) {
           </div>
           <div className='PartyModal-action'>
             <h4>Members:</h4>
+            { allPeers.map((peer, idx) => <p key={idx}>{peer._id}{peer._mine ? ' <- you!' : ''}</p>) }
           </div>
       </div>
     </Modal>
