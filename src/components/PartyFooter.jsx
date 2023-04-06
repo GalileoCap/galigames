@@ -7,33 +7,23 @@ import { partyStore } from '../stores';
 import { MY_PEER, ALL_PEERS } from '@galileocap/peer-mesh';
 import './PartyFooter.css';
 
-function PartyMember() {
+function PartyMember({ state }) {
   const onShowControls = () => {}; //TODO: Show kick/etc. popup
 
   return (
     <div className='PartyFooter-Member' onClick={onShowControls}>
-      <img src='https://placehold.co/100x100' alt="Party member\'s photo" />
-      <p>Galileo</p>
+      <img src={state.profile.picture || 'https://placehold.co/100x100'} alt="Party member\'s photo" />
+      <p>{state.profile.name}</p>
     </div>
   );
 }
 
 function PartyList() {
+  const allPeers = partyStore.usePeer(ALL_PEERS);
+
   return (
     <div id='PartyFooter-List'>
-      <PartyMember />
-      <PartyMember />
-      <PartyMember />
-      <PartyMember />
-      <PartyMember />
-      <PartyMember />
-      <PartyMember />
-      <PartyMember />
-      <PartyMember />
-      <PartyMember />
-      <PartyMember />
-      <PartyMember />
-      <PartyMember />
+      { allPeers.map((peerState, idx) => <PartyMember state={peerState} key={idx} />) }
     </div>
   );
 }

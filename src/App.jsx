@@ -10,7 +10,7 @@ import {
 } from './pages';
 import { GameWrapper } from './components';
 
-import { partyStore } from './stores';
+import { partyStore, configStore } from './stores';
 import { MY_PEER } from '@galileocap/peer-mesh';
 
 export default function App() {
