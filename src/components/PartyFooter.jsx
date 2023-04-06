@@ -2,8 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Groups as GroupsIcon } from '@mui/icons-material';
 import { Modal, Popup } from '../components';
-import { useDimensions } from '../utils';
-import { partyStore } from '../stores';
+import { partyStore, configStore } from '../stores';
 import { MY_PEER, ALL_PEERS } from '@galileocap/peer-mesh';
 import './PartyFooter.css';
 
@@ -103,19 +102,19 @@ function PartyModal({ open, setOpen }) {
 }
 
 export function PartyFooter() {
-  const { ref, width } = useDimensions();
   const [ modal, openModal ] = useState(false);
+  const mobileMode = configStore.use('mobileMode');
 
   return (
     <>
-      <div id='PartyFooter-Wrapper' ref={ref}>
+      <div id='PartyFooter-Wrapper'>
         {
-          width > 425
-          ? <div id='PartyFooter' data-platform={width > 425 ? 'desktop' : 'mobile'}>
+          mobileMode
+          ? <PartyButton openModal={openModal} />
+          : <div id='PartyFooter'>
               <PartyList /> 
               <PartyActions openModal={openModal} />
             </div>
-          : <PartyButton openModal={openModal} />
         }
       </div>
       <PartyModal open={modal} setOpen={openModal} />

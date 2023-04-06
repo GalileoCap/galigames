@@ -1,19 +1,19 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Settings as SettingsIcon, Language as LanguageIcon, Palette as PaletteIcon } from '@mui/icons-material';
-import { useDimensions } from '../utils';
 import { Config } from '../components';
+import { configStore } from '../stores';
 import './Header.css';
 
 export function Header({ game }) {
-  const { ref, width } = useDimensions();
+  const mobileMode = configStore.use('mobileMode');
 
   const [ showConfig, setShowConfig ] = useState(false);
   const onClickConfig = () => setShowConfig(true);
 
   return (
     <>
-      <div id='Header' ref={ref}>
+      <div id='Header'>
         <Link to='/' id='Logo'>GaliGames</Link>
         {
           game
@@ -26,14 +26,14 @@ export function Header({ game }) {
         }
         <div id='Header-Right'>
           {
-            width > 425
-            ? <div>
+            !mobileMode
+            ? <> 
                 <LanguageIcon className='Header-Icon' tabIndex='0' />
                 <PaletteIcon className='Header-Icon' tabIndex='0' />
-                <SettingsIcon className='Header-Icon' tabIndex='0' onClick={onClickConfig} />
-              </div>
-            : <SettingsIcon className='Header-Icon' tabIndex='0' />
+              </>
+            : <></>
           }
+          <SettingsIcon className='Header-Icon' tabIndex='0' onClick={onClickConfig} />
         </div>
       </div>
       <Config open={showConfig} setOpen={setShowConfig} />
