@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import {
   HashRouter as Router,
   Routes, Route, 
@@ -14,10 +15,21 @@ import { partyStore, configStore } from './stores';
 import { MY_PEER } from '@galileocap/peer-mesh';
 
 export default function App() {
-  const myPeer = partyStore.usePeer(MY_PEER);
+  const [loaded, setLoaded] = useState(false);
+  useEffect(() => {
+    partyStore.init({
+      profile: {
+        name: 'Your Name',
+        picture: 'https://placehold.co/100x100',
+      },
+    }).then(() => {
+      configStore.setProfile(() => {});
+      setLoaded(true);
+    });
+  }, []);
 
   return (
-    myPeer
+    loaded
     ? <Router>
         <Routes>
           <Route path='/'>
@@ -29,7 +41,7 @@ export default function App() {
             <Route path='play' element={<GamePlay />} />
           </Route>
 
-          <Route path='join/:peerId' element={<JoinParty />} />
+          <Route path='join' element={<JoinParty />} />
           <Route path='*' element={<NoPage />} />
         </Routes>
       </Router>
