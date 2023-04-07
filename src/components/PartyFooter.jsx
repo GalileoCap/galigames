@@ -57,7 +57,7 @@ function PartyModal({ open, setOpen }) {
   const allPeers = partyStore.usePeer(ALL_PEERS);
 
   const myId = partyStore.usePeer(MY_PEER)._id;
-  const link = 'https://games.galileocap.me/join?id=' + myId;
+  const link = location.origin + '/#/join?id=' + myId;
   const onCopyLink = () => navigator.clipboard.writeText(link);
   const onCopyId = () => navigator.clipboard.writeText(myId);
 
