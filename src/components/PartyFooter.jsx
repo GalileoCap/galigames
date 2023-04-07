@@ -28,14 +28,17 @@ function PartyList() {
 }
 
 function PartyActions({ openModal }) {
+  const myId = partyStore.usePeer(MY_PEER)._id;
+  const link = location.origin + '/#/join?id=' + myId; //TODO: Repeated code
+
   const onLeader = () => {}
-  const onCopy = () => {}
+  const onCopyLink = () => navigator.clipboard.writeText(link);
   const onMore = () => openModal(true);
 
   return (
     <div id='PartyFooter-Actions'>
       <button className='primary' onClick={onLeader}>Follow Leader</button>
-      <button className='primary' onClick={onCopy}>Copy Link</button>
+      <button className='primary' onClick={onCopyLink}>Copy Link</button>
       <button className='primary' onClick={onMore}>More</button>
     </div>
   );
