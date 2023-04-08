@@ -15,7 +15,9 @@ export function PartyMember({ state, actions }) {
 
   return (
     <div className='PartyMember'>
-      <img src={state.profile.picture || 'https://placehold.co/100x100'} alt="Party member\'s photo" />
+      <div>
+        <img src={state.profile.picture || 'https://placehold.co/100x100'} alt="Party member\'s photo" />
+      </div>
       <PartyMemberTag state={state} />
       {
         actions
