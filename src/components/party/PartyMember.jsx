@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react';
 import { ALL_PEERS } from '@galileocap/peer-mesh';
 
 import { partyStore } from '../../stores';
@@ -15,10 +16,20 @@ export function PartyMember({ state }) {
 }
 
 export function PartyMemberList() {
+  const ref = useRef(null);
+  useEffect(() => {
+    ref.current.addEventListener('wheel', (event) => {
+      event.preventDefault();
+      ref.current.scrollBy({
+        left: event.deltaY < 0 ? -20 : 20,
+      });
+    });
+  }, [ref]);
+
   const allPeers = partyStore.usePeer(ALL_PEERS);
 
   return (
-    <div className='PartyMemberList'>
+    <div className='PartyMemberList' ref={ref}>
       { allPeers.map((peerState, idx) => <PartyMember state={peerState} key={idx} />) }
     </div>
   );
