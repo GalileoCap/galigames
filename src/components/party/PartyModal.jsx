@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { MY_PEER } from '@galileocap/peer-mesh';
+import { MY_PEER, ALL_PEERS } from '@galileocap/peer-mesh';
 
 import { partyStore } from '../../stores';
 import {
@@ -78,9 +78,11 @@ function LeaveAction() {
 }
 
 function MembersAction() {
+  const partySize = partyStore.usePeer(ALL_PEERS).length;
+
   return (
     <div className='PartyModal-action'>
-      <h4>Members:</h4>
+      <h4>Members ({partySize})</h4>
       <PartyMemberGrid />
     </div>
   );

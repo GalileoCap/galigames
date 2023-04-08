@@ -27,13 +27,14 @@ export function PartyFooter() {
 }
 
 function PartyButton({ openModal }) {
-  //TODO: Change (1) to count the size of the party
+  const partySize = partyStore.usePeer(ALL_PEERS).length;
+
   return (
     <button
       id='PartyFooter-Button' className='primary'
       onClick={() => openModal(true)}
     >
-      <GroupsIcon />(1) Manage party
+      <GroupsIcon />({partySize}) Manage party
     </button>
   );
 }

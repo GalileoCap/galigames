@@ -5,8 +5,12 @@
   text-align: center;
 }
 
-#PartyModal .PartyModal-action {
+.PartyModal-action {
   margin-top: 0.5rem;
+}
+
+.PartyModal-action .PartyMemberGrid {
+  margin-top: 0.2rem;
 }
 
 #PartyModal h3 {
