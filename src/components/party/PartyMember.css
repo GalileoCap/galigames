@@ -40,7 +40,16 @@
 
   opacity: 0;
   transition: 0.3s ease;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 60%) 0%, rgba(0, 0, 0, 75%) 100%);
+  --clr-foo: 0, 0%, 0%; /* Fallback; TODO: Rename */ 
+  background: linear-gradient(180deg, hsla(var(--clr-foo), 60%) 0%, hsla(var(--clr-foo), 100%) 100%);
+}
+
+body[data-theme='dark'] .PartyMember-actions {
+  --clr-foo: 0, 0%, 0%;
+}
+
+body[data-theme='light'] .PartyMember-actions {
+  --clr-foo: 360, 100%, 100%;
 }
 
 .PartyMember-actions[data-show='true'],
