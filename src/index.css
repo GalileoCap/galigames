@@ -61,7 +61,7 @@ input[type='submit']:focus, input[type='submit']:hover {
 	color: var(--clr-bg0); /* TODO: Nicer color */
 }
 
-.primary:hover, .primary:focus {
+.primary:hover, .primary:focus-visible {
   background-color: var(--clr-yellow1);
 	color: var(--clr-bg4); /* TODO: Nicer color */
 }
@@ -77,7 +77,7 @@ input[type='submit']:focus, input[type='submit']:hover {
 	color: var(--clr-bg1); /* TODO: Nicer color */
 }
 
-.secondary:hover, .secondary:focus {
+.secondary:hover, .secondary:focus-visible {
   background-color: var(--clr-fg3);
 	color: var(--clr-bg0); /* TODO: Nicer color */
 }
@@ -87,7 +87,7 @@ input[type='submit']:focus, input[type='submit']:hover {
 	color: var(--clr-fg1);
 }
 
-.danger:hover, .danger:focus {
+.danger:hover, .danger:focus-visible {
   background-color: var(--clr-red1);
 	color: var(--clr-fg0);
 }
