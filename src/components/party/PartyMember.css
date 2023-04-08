@@ -1,0 +1,28 @@
+.PartyMember {
+  position: relative;
+}
+
+.PartyMember p {
+  text-align: center;
+  font-weight: bold; /* TODO: Change font */
+  /* TODO: Handle long names */
+}
+
+.PartyMember img {
+  max-width: 100px;
+  max-height: 100px;
+}
+
+.PartyMemberList {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 0.5rem;
+  overflow: auto;
+}
+
+.PartyMemberList:focus {
+  outline: solid 2px var(--clr-gray0);
+}
+
+.PartyMemberGrid {
+}

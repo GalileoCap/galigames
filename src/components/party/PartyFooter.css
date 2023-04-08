@@ -17,29 +17,9 @@
   border: solid var(--clr-bg2);
 }
 
-#PartyFooter-List {
+#PartyFooter .PartyMemberList {
   float: left;
-
-  display: grid;
-  grid-auto-flow: column;
-  gap: 0.5rem;
-  overflow: scroll;
   max-width: 90%; /* TODO: Change to let the actions fit */
-}
-
-#PartyFooter-List:focus {
-  outline: solid 2px var(--clr-gray0);
-}
-
-.PartyFooter-Member p {
-  text-align: center;
-  font-weight: bold; /* TODO: Change font */
-  /* TODO: Handle long names */
-}
-
-.PartyFooter-Member img {
-  max-width: 100px;
-  max-height: 100px;
 }
 
 #PartyFooter-Actions {
@@ -64,22 +44,4 @@
   margin-right: 0.2rem;
   -ms-transform: translateY(-5%);
   transform: translateY(-5%);
-}
-
-#PartyModal {
-  text-align: center;
-}
-
-#PartyModal .PartyModal-action {
-  margin-top: 0.5rem;
-}
-
-#PartyModal h3 {
-  font-weight: bold;
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
-#PartyModal h4 {
-  font-weight: bold;
 }

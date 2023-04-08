@@ -1,6 +1,6 @@
 export * from './GameWrapper';
 export * from './Header';
-export * from './PartyFooter';
+export * from './party';
 export * from './Modal';
 export * from './Popup';
 export * from './SearchBar';

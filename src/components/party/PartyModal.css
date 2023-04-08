@@ -1,0 +1,17 @@
+#PartyModal {
+  text-align: center;
+}
+
+#PartyModal .PartyModal-action {
+  margin-top: 0.5rem;
+}
+
+#PartyModal h3 {
+  font-weight: bold;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+#PartyModal h4 {
+  font-weight: bold;
+}
