@@ -6,7 +6,7 @@ import { ALL_PEERS, MY_PEER } from '@galileocap/peer-mesh';
 import { partyStore } from '../../stores';
 import './PartyMember.css';
 
-export function PartyMember({ state }) {
+export function PartyMember({ state, actions }) {
   const onPromote = () => {};
   const onLeave = () => {};
   const onKick = () => {};
@@ -17,15 +17,19 @@ export function PartyMember({ state }) {
     <div className='PartyMember'>
       <img src={state.profile.picture || 'https://placehold.co/100x100'} alt="Party member\'s photo" />
       <PartyMemberTag state={state} />
-      <div className='PartyMember-actions'>
-        <PartyMemberTag state={state} />
-        <button className='primary' disabled={!amLeader} onClick={onPromote}>Promote</button>
-        {
-          state._mine
-          ? <button className='danger' onClick={onLeave}>Leave</button>
-          : <button className='danger' disabled={!amLeader} onClick={onKick}>Kick</button>
-        }
-      </div>
+      {
+        actions
+        ? <div className='PartyMember-actions'>
+            <PartyMemberTag state={state} />
+            <button className='primary' disabled={!amLeader} onClick={onPromote}>Promote</button>
+            {
+              state._mine
+              ? <button className='danger' onClick={onLeave}>Leave</button>
+              : <button className='danger' disabled={!amLeader} onClick={onKick}>Kick</button>
+            }
+          </div>
+        : <></>
+      }
     </div>
   );
 }
@@ -53,7 +57,7 @@ export function PartyMemberList() {
 
   return (
     <div className='PartyMemberList' ref={ref}>
-      { allPeers.map((peerState, idx) => <PartyMember state={peerState} key={idx} />) }
+      { allPeers.map((peerState, idx) => <PartyMember state={peerState} actions={true} key={idx} />) }
     </div>
   );
 }
@@ -63,7 +67,7 @@ export function PartyMemberGrid() {
 
   return (
     <div className='PartyMemberGrid'>
-      { allPeers.map((peerState, idx) => <PartyMember state={peerState} key={idx} />) }
+      { allPeers.map((peerState, idx) => <PartyMember state={peerState} actions={true} key={idx} />) }
     </div>
   );
 }

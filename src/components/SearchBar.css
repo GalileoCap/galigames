@@ -1,14 +1,3 @@
 .SearchBar {
-  border: none;
-  border-radius: 0.5rem;
   padding: 0.5rem 1rem;
-  text-align: center;
-
-  color: var(--clr-fg0);
-  background-color: var(--clr-bg3);
-}
-
-.SearchBar:focus {
-  outline: none;
-  cursor: pointer;
 }

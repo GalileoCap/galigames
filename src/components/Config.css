@@ -5,7 +5,7 @@
   text-align: center;
 }
 
-#Config .Config-action {
+.Config-action {
   margin-top: 0.5rem;
 }
 
@@ -17,4 +17,18 @@
 
 #Config h4 {
   font-weight: bold;
+}
+
+#Config-EditProfile > * {
+  margin-top: 0.2rem;
+}
+
+#Config-EditProfile > *:last-child {
+  margin-top: 0.5rem;
+}
+
+#Config-PartyMember {
+  width: fit-content;
+  margin-inline: auto;
+  cursor: pointer;
 }

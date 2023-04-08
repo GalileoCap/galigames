@@ -1,6 +1,8 @@
 import { useState } from 'react';
-import { Modal } from '../components';
-import { configStore } from '../stores';
+import { MY_PEER } from '@galileocap/peer-mesh';
+
+import { Modal, PartyMember } from '../components';
+import { partyStore, configStore } from '../stores';
 import './Config.css';
 
 export function Config({ open, setOpen }) {
@@ -49,8 +51,21 @@ function MobileAction() {
 }
 
 function ProfileAction() {
-  const { profile } = configStore.store();
+  const myState = partyStore.usePeer(MY_PEER);
 
+  //TODO: Show edit on the right of profile
+  return (
+    <div className='Config-action'>
+      <h4>Profile</h4>
+      <div id='Config-PartyMember' tabIndex='0'>
+        <PartyMember state={myState} />
+      </div>
+      <EditProfile profile={myState.profile} />
+    </div>
+  );
+}
+
+function EditProfile({ profile }) {
   const [ name, setName ] = useState(profile.name);
   const [ pictureUrl, setPictureUrl ] = useState(profile.picture);
   const onChange = (event, set) => set(event.target.value);
@@ -59,10 +74,10 @@ function ProfileAction() {
   const onUpdateProfile = () => configStore.setProfile((profile) => ({ name, picture: pictureUrl }));
 
   return (
-    <div className='Config-action'>
-      <input type='text' value={name} onChange={onChangeName} />
-      <input type='text' value={pictureUrl} onChange={onChangePicture} />
-      <button onClick={onUpdateProfile}>Update profile</button>
+    <div id='Config-EditProfile'>
+      <p>Name: <input type='text' size={7} maxLength={13} value={name} onChange={onChangeName} /></p>
+      <p>Picture: <input type='text' value={pictureUrl} onChange={onChangePicture} /></p>
+      <div><button className='primary' onClick={onUpdateProfile}>Update Profile</button></div>
     </div>
   );
 }
