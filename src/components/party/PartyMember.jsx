@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { LocalPolice as LeaderIcon } from '@mui/icons-material';
+import { AutoTextSize } from 'auto-text-size';
 import { ALL_PEERS, MY_PEER } from '@galileocap/peer-mesh';
 
 import { partyStore } from '../../stores';
@@ -32,7 +33,7 @@ export function PartyMember({ state }) {
 function PartyMemberTag({ state }) {
   return (
     <span className='PartyMemberTag'>
-      <p>{state.profile.name}{state._leader ? <LeaderIcon /> : <></>}</p>
+      <AutoTextSize as='p' maxFontSizePx='22'>{state.profile.name}{state._leader ? <LeaderIcon /> : <></>}</AutoTextSize>
     </span>
   );
 }

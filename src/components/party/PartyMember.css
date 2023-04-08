@@ -1,12 +1,16 @@
 .PartyMember {
   position: relative;
-  width: fit-content;
+  width: 100px;
 }
 
 .PartyMemberTag {
-  text-align: center;
+  width: 100%;
+}
+
+.PartyMemberTag p {
+  width: fit-content;
+  margin-inline: auto;
   font-weight: bold; /* TODO: Change font */
-  /* TODO: Handle long names */
 }
 
 .PartyMemberTag svg {
@@ -14,7 +18,7 @@
 	-ms-transform: translateY(20%);
   transform: translateY(20%);
 
-  font-size: 1rem;
+  font-size: inherit;
   color: var(--clr-yellow1); /* TODO: Gold */
 }
 
