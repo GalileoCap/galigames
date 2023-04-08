@@ -6,9 +6,6 @@ import { partyStore } from '../../stores';
 import './PartyMember.css';
 
 export function PartyMember({ state }) {
-  const [showActions, setShowActions] = useState(false);
-  const onShowActions = (event) => { if (event.target.tagName !== 'BUTTON') setShowActions(!showActions); };
-
   const onPromote = () => {};
   const onLeave = () => {};
   const onKick = () => {};
@@ -16,10 +13,10 @@ export function PartyMember({ state }) {
   const amLeader = partyStore.usePeer(MY_PEER)._leader;
 
   return (
-    <div className='PartyMember' onClick={onShowActions}>
+    <div className='PartyMember'>
       <img src={state.profile.picture || 'https://placehold.co/100x100'} alt="Party member\'s photo" />
       <PartyMemberTag state={state} />
-      <div className='PartyMember-actions' data-show={showActions.toString()}>
+      <div className='PartyMember-actions'>
         <PartyMemberTag state={state} />
         <button className='primary' disabled={!amLeader} onClick={onPromote}>Promote</button>
         {
