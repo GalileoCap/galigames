@@ -1,17 +1,42 @@
-import { useEffect, useRef } from 'react';
-import { ALL_PEERS } from '@galileocap/peer-mesh';
+import { useState, useEffect, useRef } from 'react';
+import { LocalPolice as LeaderIcon } from '@mui/icons-material';
+import { ALL_PEERS, MY_PEER } from '@galileocap/peer-mesh';
 
 import { partyStore } from '../../stores';
 import './PartyMember.css';
 
 export function PartyMember({ state }) {
-  const onShowActions = () => {};
+  const [showActions, setShowActions] = useState(false);
+  const onShowActions = (event) => { if (event.target.tagName !== 'BUTTON') setShowActions(!showActions); };
+
+  const onPromote = () => {};
+  const onLeave = () => {};
+  const onKick = () => {};
+
+  const amLeader = partyStore.usePeer(MY_PEER)._leader;
 
   return (
     <div className='PartyMember' onClick={onShowActions}>
       <img src={state.profile.picture || 'https://placehold.co/100x100'} alt="Party member\'s photo" />
-      <p>{state.profile.name}</p>
+      <PartyMemberTag state={state} />
+      <div className='PartyMember-actions' data-show={showActions.toString()}>
+        <PartyMemberTag state={state} />
+        <button className='primary' disabled={!amLeader} onClick={onPromote}>Promote</button>
+        {
+          state._mine
+          ? <button className='danger' onClick={onLeave}>Leave</button>
+          : <button className='danger' disabled={!amLeader} onClick={onKick}>Kick</button>
+        }
+      </div>
     </div>
+  );
+}
+
+function PartyMemberTag({ state }) {
+  return (
+    <span className='PartyMemberTag'>
+      <p>{state.profile.name}{state._leader ? <LeaderIcon /> : <></>}</p>
+    </span>
   );
 }
 

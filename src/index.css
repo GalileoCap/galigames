@@ -54,6 +54,12 @@ input[type='submit']:focus, input[type='submit']:hover {
 	color: var(--clr-bg4); /* TODO: Nicer color */
 }
 
+.primary:disabled {
+  cursor: auto;
+  background-color: var(--clr-yellow1);
+	color: var(--clr-fg4); /* TODO: Nicer color */
+}
+
 .secondary {
   background-color: var(--clr-fg4);
 	color: var(--clr-bg1); /* TODO: Nicer color */
@@ -72,4 +78,10 @@ input[type='submit']:focus, input[type='submit']:hover {
 .danger:hover, .danger:focus {
   background-color: var(--clr-red1);
 	color: var(--clr-fg0);
+}
+
+.danger:disabled {
+  cursor: auto;
+  background-color: var(--clr-red1);
+	color: var(--clr-fg4);
 }
