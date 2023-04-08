@@ -1,5 +1,6 @@
 .PartyMember {
   position: relative;
+  width: fit-content;
 }
 
 .PartyMember p {
@@ -25,4 +26,9 @@
 }
 
 .PartyMemberGrid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  gap: 0.2rem 1rem;
 }

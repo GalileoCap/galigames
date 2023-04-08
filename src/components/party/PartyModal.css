@@ -1,4 +1,7 @@
 #PartyModal {
+  width: 70%;
+  margin-inline: auto;
+
   text-align: center;
 }
 
