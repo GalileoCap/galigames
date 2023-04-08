@@ -44,6 +44,18 @@ input[type='submit']:focus, input[type='submit']:hover {
   cursor: pointer;
 }
 
+.ButtonGroup button:first-child {
+  border-radius: 0.5rem 0 0 0.5rem;
+}
+
+.ButtonGroup button:last-child {
+  border-radius: 0 0.5rem 0.5rem 0;
+}
+
+.ButtonGroup button:not(:first-child):not(:last-child) {
+  border-radius: 0;
+}
+
 .primary {
   background-color: var(--clr-yellow0);
 	color: var(--clr-bg0); /* TODO: Nicer color */

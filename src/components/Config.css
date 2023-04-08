@@ -1,0 +1,20 @@
+#Config {
+  width: 70%;
+  margin-inline: auto;
+
+  text-align: center;
+}
+
+#Config .Config-action {
+  margin-top: 0.5rem;
+}
+
+#Config h3 {
+  font-weight: bold;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+#Config h4 {
+  font-weight: bold;
+}
